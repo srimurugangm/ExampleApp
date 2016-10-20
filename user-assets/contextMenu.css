@@ -1,0 +1,82 @@
+
+
+.contextMenuBG {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+    ct-context-menu .contextMenuBG .contextMenu {
+        position: absolute;
+        width: 60vw;
+        height: 100vh;
+        top: 0;
+        right: -60vw;
+        background-color: rgba(0,0,0,0.6);
+        z-index: 1000;
+        -webkit-animation: slide 0.5s forwards;
+    }
+
+    @-webkit-keyframes slide {
+        100% { right: 0; }
+    }
+
+    @keyframes slide {
+        100% { right: 0; }
+    }
+
+        ct-context-menu .contextMenuBG .contextMenu div {
+            margin: 0;
+            border-bottom: 1px solid white;
+        }
+
+            ct-context-menu .contextMenuBG .contextMenu div a,
+            ct-context-menu .contextMenuBG .contextMenu div a:hover {
+                color: white !important;
+                border: none;
+                background-color: transparent !important;
+                width: 100%;
+                padding: 3vh 0;
+                text-align: left;
+                margin-left: 3vw;
+            }
+
+                ct-context-menu .contextMenuBG .contextMenu div a span span:before {
+                    margin-right: 3vw;
+                    width: 8vw;
+                    display: inline-block;
+                    text-align: center;
+                }
+
+ct-context-menu[popup="true"] .contextMenuBG {
+    background-color: transparent;
+}
+
+    ct-context-menu[popup="true"] .contextMenu {
+        position: absolute;
+        z-index: 1000;
+        background-color: white;
+        border: 1px solid white;
+        height: initial;
+        -webkit-animation: none;
+    }
+
+        ct-context-menu[popup="true"] .contextMenuBG .contextMenu div {
+            border-top: 1px solid white;
+        }
+
+            ct-context-menu[popup="true"] .contextMenuBG .contextMenu div:first-child {
+                border-top: none;
+            }
+
+            ct-context-menu[popup="true"] .contextMenuBG .contextMenu div a,
+            ct-context-menu[popup="true"] .contextMenuBG .contextMenu div a:hover {
+                color: black !important;
+                margin-left: 0;
+                text-align: center;
+                padding: 2vh 0;
+            }
