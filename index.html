@@ -1,0 +1,77 @@
+<!-- Copyright © CommonTime Ltd. 2016 -->
+<!DOCTYPE html>
+<html>
+<head lang="en" themes="">
+    <meta charset="UTF-8">
+    <title>CommonTime Infinity Client</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+
+    <!-- Cordova -->
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+    <!-- ASSETS -->
+    <script src="assets.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            FastClick.attach(document.body);
+        }, false);
+    </script>
+
+    <style>
+        #splash-screen {
+            position: fixed;
+            background: linear-gradient(45deg, #15233b 43%,#0a4069 100%);
+            height: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #splash-screen img {
+            width: 66.6%;
+            min-width: 100px;
+            max-width: 250px;
+        }
+
+        .view-frame {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="splash-screen" class="text-center" style="background: #ffffff;">
+        <img src="data:image/png;base64,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" alt="" style="width: auto; min-width: 0; max-width: none;">
+    </div>
+    <!-- Modal -->
+    <div class="modal" id="version-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Update available</h4>
+                </div>
+                <div class="modal-body">
+                    Do you wish to update to version <span class="version-number">(no version specified)</span> now?<br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="dismiss-button btn btn-default">Later</button>
+                    <button type="button" class="confirm-button btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="view-frame" ng-class="{back: ($root.back)}"></div>
+
+    <!-- MODULES -->
+    <script src="app.min.js"></script>
+
+
+
+</body></html>
